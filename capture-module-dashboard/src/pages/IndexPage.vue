@@ -1,26 +1,20 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+  <HomePage/>
 </template>
+
+<style></style>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import type { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
+import HomePage from './HomePage.vue';
 
 export default defineComponent({
   name: 'IndexPage',
 
   components: {
-    ExampleComponent,
+    HomePage
   },
-
   data() {
     const todos: Todo[] = [
       {
@@ -51,5 +45,10 @@ export default defineComponent({
 
     return { todos, meta };
   },
+  methods: {
+    testMethod() {
+
+    }
+  }
 });
 </script>

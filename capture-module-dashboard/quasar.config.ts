@@ -14,8 +14,8 @@ export default defineConfig((/* ctx */) => {
       // cache: false,
       // rawEsbuildEslintOptions: {},
       // rawWebpackEslintPluginOptions: {},
-      warnings: true,
-      errors: true,
+      warnings: false,
+      errors: false,
     },
     // https://v2.quasar.dev/quasar-cli-webpack/prefetch-feature
     // preFetch: true,
@@ -44,6 +44,8 @@ export default defineConfig((/* ctx */) => {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-file#build
     build: {
+
+
       // publicPath: '/',
       vueRouterMode: 'hash', // available values: 'hash', 'history'
 
@@ -76,6 +78,8 @@ export default defineConfig((/* ctx */) => {
       // https://v2.quasar.dev/quasar-cli-webpack/handling-webpack
       // "chain" is a webpack-chain object https://github.com/sorrycc/webpack-chain
       // chainWebpack (/* chain, { isClient, isServer } */) {}
+      devtool: 'source-map',
+      // sourcemap: true
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-file#devserver
@@ -88,7 +92,9 @@ export default defineConfig((/* ctx */) => {
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-file#framework
     framework: {
-      config: {},
+      config: {
+        notify: {}
+      },
 
       // iconSet: 'material-icons', // Quasar icon set
       // lang: 'en-US', // Quasar language pack
