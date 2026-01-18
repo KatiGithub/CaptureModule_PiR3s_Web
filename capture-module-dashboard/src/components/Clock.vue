@@ -67,19 +67,19 @@ import axios from 'axios';
 
                 const unixNano = dateObj.getTime() * 1000000;
 
-                axios.put('http://127.0.0.1:5000/api/set/time', unixNano, {
+                axios.put('http://192.168.1.100:8080/api/setTime', JSON.stringify(unixNano), {
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'text/plain'
                     }
                 } 
                 ).then((_) => {
-                    $q.notify({
-                        message: "Success",
+                    this.$q.notify({
+                        message: "Device time updated successfully. Please check logged packets.",
                         color: "positive"
                     })
                 }).catch((_) => {
-                    $q.notify({
-                        message: "Fail",
+                    this.$q.notify({
+                        message: "Failed to update time. Please try again",
                         color: "negative"
                     })
                 })

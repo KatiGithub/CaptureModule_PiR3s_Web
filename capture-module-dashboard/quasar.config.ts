@@ -93,7 +93,10 @@ export default defineConfig((/* ctx */) => {
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-file#framework
     framework: {
       config: {
-        notify: {}
+        notify: {
+          position: 'bottom',
+          timeout: 2500
+        }
       },
 
       // iconSet: 'material-icons', // Quasar icon set
@@ -107,7 +110,9 @@ export default defineConfig((/* ctx */) => {
       // directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: [
+        'Notify'
+      ],
     },
 
     // animations: 'all', // --- includes all animations
